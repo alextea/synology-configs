@@ -1,0 +1,9 @@
+# ~downloader/.flexget/config.yml
+
+tasks:
+  download-task:
+    rss: http://showrss.info/user/41614.rss
+    all_series: yes
+    transmission:
+      username: admin
+      password: '{43a419487da3134ad5bbbd44537cc721137d3fbaApOvx1bG'
