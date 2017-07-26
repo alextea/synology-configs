@@ -1,0 +1,40 @@
+#/etc/profile: system-wide .profile file for ash.
+
+umask 022
+
+PATH=/sbin:/bin:/opt/sbin:/usr/sbin:/opt/bin:/usr/bin:/usr/syno/sbin:/usr/syno/bin:/usr/local/sbin:/usr/local/bin
+export PATH
+
+PGDATA=/var/services/pgsql
+export PGDATA
+
+TERMINFO=/usr/share/terminfo
+export TERMINFO
+
+TERM=${TERM:-cons25}
+export TERM
+
+PAGER=more
+export PAGER
+
+export LC_ALL=en_US.utf8
+export LANG=en_US.utf8
+
+PS1="`hostname`> "
+
+alias dir="ls -al"
+alias ll="ls -la"
+
+ulimit -c unlimited
+
+if [ -f /etc.defaults/.bashrc_profile ]; then
+	source /etc.defaults/.bashrc_profile
+fi
+export JAVA_HOME=/usr/local/java    # added by Unofficial Java Installer
+export LANG=en_US.utf8              # added by Unofficial Java Installer
+PATH=$PATH:/var/packages/Java8/target/j2sdk-image/bin # Synology Java runtime enviroment
+PATH=$PATH:/var/packages/Java8/target/j2sdk-image/jre/bin # Synology Java runtime enviroment
+JAVA_HOME=/var/packages/Java8/target/j2sdk-image/jre # Synology Java runtime enviroment
+CLASSPATH=.:/var/packages/Java8/target/j2sdk-image/jre/lib # Synology Java runtime enviroment
+LANG=en_US.utf8 # Synology Java runtime enviroment
+export CLASSPATH PATH JAVA_HOME LANG # Synology Java runtime enviroment
